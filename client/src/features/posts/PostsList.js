@@ -12,8 +12,10 @@ const PostsList = () => {
     .sort((a, b) => b.date.localeCompare(a.date));
 
   const renderedPosts = orderedPosts.map((post) => (
-    <article key={post.id}>
-      <h3>{post.title}</h3>
+    <article key={post.id} className="border-2 border-zinc-800 my-2 p-1">
+      <h3 className="text-xl font-semibold underline capitalize">
+        {post.title}
+      </h3>
       <p>{post.content.substring(0, 100)}</p>
       <p>
         <PostAuthor userId={post.userId} />
@@ -24,8 +26,8 @@ const PostsList = () => {
   ));
 
   return (
-    <section>
-      <h2>Posts</h2>
+    <section className="mt-6">
+      <h2 className="text-center text-2xl font-semibold">Posts</h2>
       {renderedPosts}
     </section>
   );

@@ -4,8 +4,10 @@ import PostsList from "./features/posts/PostsList";
 const App = () => {
   return (
     <div>
-      <AddPostForm />
-      <PostsList />
+      <main className="p-4">
+        <AddPostForm />
+        <PostsList />
+      </main>
     </div>
   );
 };

@@ -37,30 +37,54 @@ const AddPostForm = () => {
   });
 
   return (
-    <section>
-      <h2>Add a New Post</h2>
-      <form>
-        <label htmlFor="postTitle">Post Title:</label>
-        <input
-          type="text"
-          id="postTitle"
-          name="postTitle"
-          value={title}
-          onChange={onTitleChanged}
-        />
-        <label htmlFor="postAuthor">Author:</label>
-        <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
-          <option value=""></option>
-          {usersOptions}
-        </select>
-        <label htmlFor="postContent">Content:</label>
-        <textarea
-          id="postContent"
-          name="postContent"
-          value={content}
-          onChange={onContentChanged}
-        />
-        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+    <section className="border border-zinc-800 p-4">
+      <h2 className="text-3xl text-center font-bold">Add a New Post</h2>
+      <form className="mt-2 flex flex-col">
+        <div className="p-2">
+          <label className="w-1/4 inline-block" htmlFor="postTitle">
+            Post Title:
+          </label>
+          <input
+            className="border border-zinc-800 w-3/4"
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            value={title}
+            onChange={onTitleChanged}
+          />
+        </div>
+        <div className="p-2">
+          <label className="w-1/4 inline-block" htmlFor="postAuthor">
+            Author:
+          </label>
+          <select
+            className="border border-zinc-800 w-3/4"
+            id="postAuthor"
+            value={userId}
+            onChange={onAuthorChanged}
+          >
+            <option value=""></option>
+            {usersOptions}
+          </select>
+        </div>
+        <div className="p-2">
+          <label className="w-1/4 inline-block align-top" htmlFor="postContent">
+            Content:
+          </label>
+          <textarea
+            className="border border-zinc-800 w-3/4"
+            id="postContent"
+            name="postContent"
+            value={content}
+            onChange={onContentChanged}
+          />
+        </div>
+        <button
+          className="border bg-orange-400 w-1/4 self-center bg-gradient-to-r from-cyan-500 to-blue-500 rounded-sm px-1 text-white"
+          type="button"
+          onClick={onSavePostClicked}
+          disabled={!canSave}
+        >
           Save Post
         </button>
       </form>
