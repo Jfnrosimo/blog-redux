@@ -36,11 +36,10 @@ const PostsList = () => {
   }
 
   return (
-    <section className="mt-6">
-      <h2 className="text-center text-2xl font-semibold">Posts</h2>
+    <section>
+      <h2>Posts</h2>
       {content}
     </section>
   );
 };
-
 export default PostsList;
