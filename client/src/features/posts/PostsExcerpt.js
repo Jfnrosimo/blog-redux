@@ -1,8 +1,8 @@
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
-import ReactionsButtons from "./ReactionsButtons";
+import ReactionButtons from "./ReactionButtons";
 
-const PostsExerpt = ({ post }) => {
+const PostsExcerpt = ({ post }) => {
   return (
     <article className="border-2 border-zinc-800 my-2 p-1">
       <h3 className="text-xl font-semibold underline capitalize">
@@ -13,9 +13,9 @@ const PostsExerpt = ({ post }) => {
         <PostAuthor userId={post.userId} />
         <TimeAgo timestamp={post.date} />
       </p>
-      <ReactionsButtons post={post} />
+      <ReactionButtons post={post} />
     </article>
   );
 };
 
-export default PostsExerpt;
+export default PostsExcerpt;
