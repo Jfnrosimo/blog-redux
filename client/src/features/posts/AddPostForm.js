@@ -45,30 +45,54 @@ const AddPostForm = () => {
   ));
 
   return (
-    <section>
-      <h2>Add a New Post</h2>
-      <form>
-        <label htmlFor="postTitle">Post Title:</label>
-        <input
-          type="text"
-          id="postTitle"
-          name="postTitle"
-          value={title}
-          onChange={onTitleChanged}
-        />
-        <label htmlFor="postAuthor">Author:</label>
-        <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
-          <option value=""></option>
-          {usersOptions}
-        </select>
-        <label htmlFor="postContent">Content:</label>
-        <textarea
-          id="postContent"
-          name="postContent"
-          value={content}
-          onChange={onContentChanged}
-        />
-        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+    <section className="m-3 p-3 bg-cyan-500">
+      <h2 className="text-3xl font-semibold text-center">Add a New Post</h2>
+      <form className="flex flex-col">
+        <div className="flex justify-end my-2">
+          <label className="flex-1" htmlFor="postTitle">
+            Post Title:
+          </label>
+          <input
+            className="w-3/4"
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            value={title}
+            onChange={onTitleChanged}
+          />
+        </div>
+        <div className="flex justify-end my-2">
+          <label className="flex-1" htmlFor="postAuthor">
+            Author:
+          </label>
+          <select
+            className="w-3/4"
+            id="postAuthor"
+            value={userId}
+            onChange={onAuthorChanged}
+          >
+            <option value=""></option>
+            {usersOptions}
+          </select>
+        </div>
+        <div className="flex justify-end my-2">
+          <label className="flex-1 align-top" htmlFor="postContent">
+            Content:
+          </label>
+          <textarea
+            className="w-3/4"
+            id="postContent"
+            name="postContent"
+            value={content}
+            onChange={onContentChanged}
+          />
+        </div>
+        <button
+          className="my-2 bg-blue-500 w-2/4 self-center p-1 rounded"
+          type="button"
+          onClick={onSavePostClicked}
+          disabled={!canSave}
+        >
           Save Post
         </button>
       </form>
